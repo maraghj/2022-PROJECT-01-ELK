@@ -1,2 +1,2 @@
 # 2022-PROJECT-01-ELK-STACK
-Cyber Boot Camp - Project 1
+Cybersecurity Bootcamp Project 1: Cumulative Networking, Cloud Security, ELK Stack product
