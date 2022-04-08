@@ -3,7 +3,7 @@ Cybersecurity Bootcamp Project 1: Cumulative Networking, Cloud Security, ELK Sta
 
 ## Automated ELK Stack Deployment
 
-![alt text](https://github.com/maraghj/2022-PROJECT-01-ELK/blob/main/ELK_DIAGRAM.JPG?raw=true)
+![alt text](https://github.com/maraghj/2022-PROJECT-01-ELK/blob/main/diagrams/ELK_DIAGRAM.JPG)
 
 The files in this repository were used to configure the network depicted below.
 
