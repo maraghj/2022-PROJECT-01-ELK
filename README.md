@@ -26,8 +26,30 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 The configuration details of each machine may be found below.
 
-Name		Function	IP Address	Operating System
-Jump Box	Gateway		10.0.0.9	Linux
-VM 1		DVWA		10.0.0.10	Linux
-VM 2		DVWA		10.0.0.11	Linux
-ELK		Server		70.37.162.50	Linux
+|Name		|Function	|IP Address	|Operating System |
+|---------------|---------------|---------------|-----------------|
+|Jump Box	|Gateway	|10.0.1.4	|Ubuntu 18.04     |
+|VM 1		|DVWA		|10.0.1.6	|Ubuntu 18.04     |
+|VM 2		|DVWA		|10.0.1.7	|Ubuntu 18.04     |
+|ELK		|Server		|10.1.0.4	|Ubuntu 18.04     |
+
+## Access Policies
+
+The machines on the internal network are not exposed to the public Internet.
+
+Only the jump box provisioner machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+
+-Personal IP address
+
+Machines within the network can only be accessed by the Jump Box. The Elk Machine can have access from personal IP address through port 5601.
+
+A summary of the access policies in place can be found in the table below.
+
+|Name		|Publicly Accessible		|Allowed IP Addresses|
+|---------------|-------------------------------|--------------------|
+|Jump Box	|Yes				|Personal            |
+|Load Balancer	|Yes				|Open                |
+|Web 1		|No				|10.0.1.6            |
+|Web 2		|No				|10.0.1.7            |
+|ELK Server	|Yes				|Personal            |
+
