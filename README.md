@@ -3,7 +3,7 @@ Cybersecurity Bootcamp Project 1: Cumulative Networking, Cloud Security, ELK Sta
 
 ## Automated ELK Stack Deployment
 
-![alt text](https://github.com/maraghj/2022-PROJECT-01-ELK/blob/main/diagrams/ELK_DIAGRAM.JPG)
+![alt text](https://github.com/maraghj/2022-PROJECT-01-ELK/blob/main/ELK_DIAGRAM.JPG?raw=true)
 
 The files in this repository were used to configure the network depicted below.
 
@@ -22,7 +22,19 @@ Machines Being Monitored
 How to Use the Ansible Build
 
 Description of the Topology
-The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application. Load balancing ensures that the application will be highly available in addition to restricting access to the network. -Load balancers distribute traffic to servers to prevent any one server from being overloaded. This protects against DDoS attacks by preventing servers from being overloaded. The jump box has the advantages of allowing access to the user froma single node, and this means it can be more easily secured and monitored. Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs. -Filebeat will monitor log files, collect those events and forward them to the ELK stack. -Metricbeat periodically records metric data, including operating system metrics like CPU or memory data related to the services running on the servers.
+The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application. 
+
+Load balancing ensures that the application will be highly available in addition to restricting access to the network. 
+
+Load balancers distribute traffic to servers to prevent any one server from being overloaded. This protects against DDoS attacks by preventing servers from being overloaded. 
+
+The jump box has the advantages of allowing access to the user froma single node, and this means it can be more easily secured and monitored. 
+
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs. -
+
+-Filebeat will monitor log files, collect those events and forward them to the ELK stack. 
+
+-Metricbeat periodically records metric data, including operating system metrics like CPU or memory data related to the services running on the servers.
 
 The configuration details of each machine may be found below.
 
@@ -37,11 +49,11 @@ The configuration details of each machine may be found below.
 
 The machines on the internal network are not exposed to the public Internet.
 
-Only the jump box provisioner machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+Only the Ansible jumpbox machine can accept connections fron the internet
 
--Personal IP address
+Access to this machine can only be allowed from personal ip address
 
-Machines within the network can only be accessed by the Jump Box. The Elk Machine can have access from personal IP address through port 5601.
+The ELK is accessed from the jumpbox and not directly from the personal ip address
 
 A summary of the access policies in place can be found in the table below.
 
@@ -51,5 +63,42 @@ A summary of the access policies in place can be found in the table below.
 |Load Balancer	|Yes				|Open                |
 |Web 1		|No				|10.0.1.6            |
 |Web 2		|No				|10.0.1.7            |
-|ELK Server	|Yes				|Personal            |
+|ELK Server	|No				|JBOX                |
 
+## ELK Configuration
+
+Ansible was used to automate Ansible was used to automate configuration of the ELK machine. 
+
+No configuration was performed manually, which is advantageous because the automation is is less vulnerable to human error and more efficient, scalable and repeatable. 
+
+The playbook implements the following tasks;
+
+
+## Target Machines
+
+The ELK is configured to mornitor the following machines
+
+- 10.0.1.6
+- 10.0.1.7
+
+Beats have been installed on both machines where as Filebeact collects webserver logs and any system file changes.
+
+While the Metricbeat monitors for the operating system which includes the CPU and Memory 
+
+## Using the Playbook
+
+In order to use the playbook you will need to have ANsible control all ready configured.
+
+To get to your Ansible you will need to ssh to your jbox once in the jbox you will do the following to vewrify your Ansible
+
+1. sudo docker container list -a which will show your ansible container
+
+2. access the container you will now sudo docker container start, 
+
+3. now you can either reference the container name or the container id and sudo docker container attach 
+
+4. now once attached you will now cd into the Ansible using cd /etc/ansible
+
+Now that you are finally in the ansible you can run your playbooks using ansible-playbook filebeat-playbook.yml and ansible-playbook metricbeat-playbook.yml
+
+Once installed you can now go to Kibana using your ELK ip xx.xx.xxx.xxx:5601 to verify both metric are working as required.
