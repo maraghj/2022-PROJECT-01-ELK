@@ -83,7 +83,7 @@ While the Metricbeat monitors for the operating system which includes the CPU an
 
 ## Using the Playbook
 
-In order to use the playbook you will need to have ANsible control all ready configured.
+In order to use the playbook you will need to have Ansible control all ready configured.
 
 To get to your Ansible you will need to ssh to your jbox once in the jbox you will do the following to vewrify your Ansible
 
