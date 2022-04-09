@@ -67,15 +67,16 @@ A summary of the access policies in place can be found in the table below.
 
 ## ELK Configuration
 
-Ansible was used to automate Ansible was used to automate configuration of the ELK machine. 
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 
-No configuration was performed manually, which is advantageous because the automation is is less vulnerable to human error and more efficient, scalable and repeatable. 
+Ansible can be run from the command line and will ensure our provisioning scripts run identically everywhere.
+The playbook implements the following tasks:
 
-The playbook implements the following tasks;
-
--[Filebeat](https://github.com/maraghj/2022-PROJECT-01-ELK/tree/main/ansible/Filebeat)
-
--[Metricbeat](https://github.com/maraghj/2022-PROJECT-01-ELK/tree/main/ansible/Metricbeat)
+Change the memory on the ELK VM
+Install docker.io
+Install python-pip
+Install docker python module
+Download and launch a docker elk stack
 
 ## Target Machines
 
