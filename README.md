@@ -73,9 +73,9 @@ No configuration was performed manually, which is advantageous because the autom
 
 The playbook implements the following tasks;
 
-![Filebeat](https://github.com/maraghj/2022-PROJECT-01-ELK/tree/main/ansible/Filebeat)
+-[Filebeat](https://github.com/maraghj/2022-PROJECT-01-ELK/tree/main/ansible/Filebeat)
 
-![Metricbeat](https://github.com/maraghj/2022-PROJECT-01-ELK/tree/main/ansible/Metricbeat)
+-[Metricbeat](https://github.com/maraghj/2022-PROJECT-01-ELK/tree/main/ansible/Metricbeat)
 
 ## Target Machines
 
