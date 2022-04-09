@@ -68,15 +68,14 @@ A summary of the access policies in place can be found in the table below.
 ## ELK Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
+- Ansible can be run from the command line and will ensure our provisioning scripts run identically everywhere.
 
-Ansible can be run from the command line and will ensure our provisioning scripts run identically everywhere.
 The playbook implements the following tasks:
-
-Change the memory on the ELK VM
-Install docker.io
-Install python-pip
-Install docker python module
-Download and launch a docker elk stack
+* Change the memory on the ELK VM
+* Install docker.io
+* Install python-pip
+* Install docker python module
+* Download and launch a docker elk stack
 
 ## Target Machines
 
